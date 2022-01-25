@@ -1,0 +1,26 @@
+
+
+{% block title %}Nuevo Laboratorio{% endblock %}
+
+{% block content %}
+<h1>
+    Introduzca los datos
+</h1>
+<form method="post">
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <td><input type="text", name = "Nombre", maxlength = "20", value = "Introduzca el nombre del laboratorio"></td>
+        </tr>
+        <tr>
+            <th>Especialidad</th>
+            <td><input type="text", name = "Especialidad", maxlength = "20", value = "Introduzca la especialidad del laboratorio"></td>
+        </tr>
+        <tr>
+            <th>Fecha de fundación</th>
+            <td><input type = "date", name = "FechaFund"></td>
+        </tr>
+    </table>
+    <input type = "submit", value = "Enviar datos"> <input type = "reset", value = "Borrar datos">
+</form>
+{% endblock %}
