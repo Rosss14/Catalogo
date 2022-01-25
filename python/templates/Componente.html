@@ -1,0 +1,18 @@
+{% block title %}Component detail{% endblock %}
+
+{% block content %}
+
+    <h1>{{ final_result['name'] }}</h1>
+
+    <h3>Details</h3>
+    <dl>
+      <dt>ID</dt>
+      <dd>{{ final_result[0] }}</dd>
+      <dt>Name</dt>
+      <dd>{{ final_result[2] }}</dd>
+      <dt>Principio Activo o Incipiente </dt>
+      <dd>{{ final_result[1] }}</dd>
+    </dl>
+    <a href="{{ url_for('render_components') }}">Back 1</a>
+
+{% endblock %}
