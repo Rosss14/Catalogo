@@ -1,0 +1,23 @@
+
+
+{% block title %}Componentes{% endblock %}
+
+{% block content %}
+    <h1>Listado Componentes</h1>
+    <table class="table table-sm" id="miTabla">
+		  <thead>
+		    <tr>
+		      <th scope="col">Nombre</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+                {% for componente in final_result %}
+                    <tr>
+                        <td><a href="{{ url_for('render_component', id=componente[0])}}" >{{componente[2] }}</a></td>
+                    </tr>
+                {% endfor %}
+		  </tbody>
+		</table>
+
+
+{% endblock %}
