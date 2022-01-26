@@ -19,8 +19,8 @@ CREATE TABLE `laboratorio` (
   `fecha_fundacion` datetime DEFAULT NULL,
   `profesional` int(11) DEFAULT NULL,
   PRIMARY KEY (`laboratorio_id`),
-  KEY `profesionalFK_idx` (`profesional`),
-  CONSTRAINT `profesionalFK` FOREIGN KEY (`profesional`) REFERENCES `profesional` (`profesional_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `labprofesionalFK_idx` (`profesional`),
+  CONSTRAINT `labprofesionalFK` FOREIGN KEY (`profesional`) REFERENCES `profesional` (`profesional_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `medicamento` (
@@ -42,7 +42,7 @@ CREATE TABLE `componente` (
   `Nombre` varchar(50) NOT NULL,
   `componente_id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`componente_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `componente_medicamento` (
   `componenteId` int(11) NOT NULL,
