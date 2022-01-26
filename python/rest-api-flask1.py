@@ -3,7 +3,7 @@ import mysql.connector
 import os
 app = Flask(__name__)
 
-conn_obj = mysql.connector.connect(host="localhost",user="root",password = '12345', database="Catalogo")
+conn_obj = mysql.connector.connect(host="localhost",user="root", database="Catalogo")
 print(conn_obj)
 con_obj= conn_obj.cursor()
 print(con_obj)
