@@ -1,0 +1,24 @@
+{% block title %}Detalles del Laboratorio{% endblock %}
+
+{% block content %}
+
+    <h1>{{ final_result['nombre'] }}</h1>
+    <form action="{{ url_for('ModificarLab', id = final_result[0]) }}" method="GET">
+        <input type="submit" value="Modificar"
+                class="btn btn-danger btn-sm"
+                name = Modificar>
+
+    <h3>Detalles</h3>
+    <d1>
+        <dt>ID</dt>
+        <dd>{{ final_result[0] }}</dd>
+        <dt>Nombre</dt>
+        <dd>{{ final_result[1] }}</dd>
+        <dt>Especialidad</dt>
+        <dd>{{ final_result[2] }}</dd>
+        <dt>Fecha de fundación</dt>
+        <dd>{{ final_result[3] }}</dd>
+        <dt>Profesional</dt>
+        <dd>{{ final_result[4] }}</dd>
+    </d1>
+{% endblock %}

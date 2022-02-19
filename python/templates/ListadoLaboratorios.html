@@ -1,0 +1,23 @@
+<head>
+    <title>{% block title %}Laboratorios{% endblock %}</title>
+</head>
+
+<body>
+{% block content %}
+    <h1>Listado de Laboratorios</h1>
+    <table class = "table table-sm" id = "miTabla">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for laboratorio in final_result %}
+        <tr>
+            <td><a href="{{ url_for('render_laboratorio', id = laboratorio[0])}}">{{laboratorio[1] }}</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+</body>

@@ -1,6 +1,4 @@
-
-
-{% block title %}Nuevo Laboratorio{% endblock %}
+{% block title %}Modificar Laboratorio{% endblock %}
 
 {% block content %}
 <h1>
@@ -9,19 +7,19 @@
 <form method="post">
     <div class = "form-group">
             <label for = "Nombre">Nombre</label>
-            <input type="text", name = "Nombre", maxlength = "20", value = "{{ request.form['Nombre'] }}">
+            <input type="text", name = "Nombre", maxlength = "20", value = "{{ request.form['Nombre'] or lab[1] }}">
     </div>
     <div class = "form-group">
             <label for = "Especialidad">Especialidad</label>
-            <input type="text", name = "Especialidad", maxlength = "20", value = "{{ request.form['Especialidad'] }}">
+            <input type="text", name = "Especialidad", maxlength = "20", value = "{{ request.form['Especialidad'] or lab[2] }}">
     </div>
     <div class = "form-group">
            <label for = "FechaFundacion">Fecha de fundación</label> 
-            <input type = "date", name = "FechaFundacion", value = "{{ request.form['FechaFundacion'] }}">
+            <input type = "date", name = "FechaFundacion", value = "{{ request.form['FechaFundacion'] or lab[3] }}">
     </div>
     <div class = "form-group">
         <label for="Profesional">Profesional</label>
-        <input type = "text", name = "Profesional", maxlength = "10", value = "{{ request.form['Profesional'] }}">
+        <input type = "text", name = "Profesional", maxlength = "10", value = "{{ request.form['Profesional'] or lab[4] }}">
     </div>
     <div class = "form-group">
         <input type = "submit", value = "Enviar datos"> <input type = "reset", value = "Borrar datos">

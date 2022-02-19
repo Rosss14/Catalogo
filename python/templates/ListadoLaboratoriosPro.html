@@ -1,0 +1,32 @@
+<head>
+    <title>{% block title %}Laboratorios{% endblock %}</title>
+</head>
+
+<body>
+{% block content %}
+    <h1>Listado de Laboratorios</h1>
+    <form action="{{ url_for('createLab') }}" method="GET">
+        <input type="submit" value="Añadir"
+                class="btn btn-danger btn-sm"
+                name = Añadir>
+    <table class = "table table-sm" id = "miTabla">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for laboratorio in final_result %}
+        <tr>
+            <td><a href="{{ url_for('render_laboratorioP', id = laboratorio[0])}}">{{laboratorio[1] }}</a></td>
+            <td><form action="{{ url_for('BorrarLab', id=laboratorio[0]) }}" method="POST">
+                <input type="submit" value="Borrar"
+                        class="btn btn-danger btn-sm"
+                        onclick="return confirm('Está seguro de que quiere borrar este medicamento?')">
+            </form></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+</body>
