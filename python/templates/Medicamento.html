@@ -1,0 +1,25 @@
+{% block title %}Medicine detail{% endblock %}
+
+{% block content %}
+
+    <h1>{{ final_result[1] }}</h1>
+    <form action="{{ url_for('editMedicine', id=final_result[0]) }}" method="GET">
+                            <input type="submit" value="Edit"
+                                    class="btn btn-danger btn-sm">
+    </form>
+    <h3>Details</h3>
+    <dl>
+      <dt>ID</dt>
+      <dd>{{ final_result[0] }}</dd>
+      <dt>Nombre</dt>
+      <dd>{{ final_result[1] }}</dd>
+      <dt>Grupo_Terapeutico</dt>
+      <dd>{{ final_result[2] }}</dd>
+      <dt>Dosis_Diaria </dt>
+      <dd>{{ final_result[3] }}</dd>
+      <dt>Efectos_Secundarios </dt>
+      <dd>{{ final_result[4] }}</dd>
+    </dl>
+    <a href="{{ url_for('render_medicines') }}">Back 1</a>
+
+{% endblock %}

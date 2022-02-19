@@ -1,0 +1,56 @@
+{% block content %}
+<h1>{% block title %} Edit "{{ drug[1] }}" {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" placeholder="Nombre del medicamento"
+               class="form-control"
+               value="{{ request.form['nombre'] or drug[1] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="grupo">Grupo Terapeutico</label>
+        <input type="text" name="grupo" placeholder="Grupo terapeutico"
+               class="form-control"
+               value="{{ request.form['grupo'] or drug[2] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="dosis">Dosis diaria</label>
+        <input type="text" name="dosis" placeholder="Dosis diaria"
+               class="form-control"
+               value="{{ request.form['dosis'] or drug[3] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="efectos">Efectos Secundarios</label>
+        <textarea name="efectos" placeholder="Efectos Secundarios"
+                  class="form-control">{{ request.form['efectos'] or drug[4] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="laboratorio">Laboratorio</label>
+        <input type="text" name="lab" placeholder="Laboratorio"
+               class="form-control"
+               value="{{ request.form['lab'] or drug[5] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="profesional">Profesional</label>
+        <input type="text" name="prof" placeholder="Profesional"
+               class="form-control"
+               value="{{ request.form['prof'] or drug[6] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+<hr>
+{% endblock %}

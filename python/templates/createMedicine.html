@@ -1,0 +1,50 @@
+{% block content %}
+<h1>{% block title %} Crear un nuevo medicamento {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre"
+               placeholder="Nombre del medicamento" class="form-control"
+               value="{{ request.form['nombre'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="grupo">Grupo Terapeutico</label>
+        <input type="text" name="grupo"
+               placeholder="Grupo Terapeutico" class="form-control"
+               value="{{ request.form['grupo'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="dosis">Dosis diaria</label>
+        <input type="text" name="dosis"
+               placeholder="Dosis diaria" class="form-control"
+               value="{{ request.form['dosis'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="efectos">Efectos Secundarios</label>
+        <textarea name="efectos" placeholder="Efectos secundarios"
+                  class="form-control">{{ request.form['efectos'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="laboratorio">Laboratorio</label>
+        <input type="text" name="lab"
+               placeholder="ID del laboratorio" class="form-control"
+               value="{{ request.form['lab'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="profesional">Profesional</label>
+        <input type="text" name="prof"
+               placeholder="ID del profesional" class="form-control"
+               value="{{ request.form['prof'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

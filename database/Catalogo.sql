@@ -1,9 +1,10 @@
+DROP DATABASE IF EXISTS `Catalogo`;
 CREATE DATABASE `Catalogo` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 use Catalogo;
 
 CREATE TABLE `profesional` (
-  `profesional_id` int(11) NOT NULL,
+  `profesional_id` int(11) NOT NULL AUTO_INCREMENT,
   `Usuario` varchar(20) NOT NULL,
   `Clave` varchar(15) NOT NULL,
   `Especialidad` varchar(30) DEFAULT NULL,
@@ -25,6 +26,7 @@ CREATE TABLE `laboratorio` (
 
 CREATE TABLE `medicamento` (
   `medicamento_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
   `grupoTerapeutico` varchar(30) NOT NULL,
   `dosisDiaria` varchar(255) DEFAULT NULL,
   `efectosSecundarios` varchar(255) DEFAULT NULL,
@@ -42,7 +44,7 @@ CREATE TABLE `componente` (
   `Nombre` varchar(50) NOT NULL,
   `componente_id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`componente_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `componente_medicamento` (
   `componenteId` int(11) NOT NULL,
